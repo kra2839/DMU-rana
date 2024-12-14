@@ -1,0 +1,86 @@
+### 원격 저장소 복제 clone ###
+
+# 클론 개념
+- 원격 저장소(깃허브)
+-원격 저장소를 지역 저장소에 복제
+
+# 깃허브 원격저장소 생성
+- git-clone
+
+# pc깃에서 원격저장소 복제(git clone)
+1. $git clone [복사된-주소]
+- 원격 저장소와 동일안 아름으로 복제
+2. $git clone [복사된-주소] [새로운-폴더명]
+- 하부폴더 [새로운-폴더명] 이름으로 복제
+3. $git clone [복사된-주소].
+- 현재 파일 바로 복제
+
+#원격 저장소 별칭 이름 점검
+- $git remote
+
+# $git remote - v
+- 저장소 등 원격 저장소 정보 목록 표시
+
+# 원격 저장소 별칭 관리
+1. $git remote add origin URL
+- 원격 저장소 별칭 저장
+2. $git remote show origin
+- 자세한 정보
+3. $git remote origin org
+- 이름 수정
+4. $git remote rm org
+- 삭제
+
+# $ git remote show origin(atom)
+- 원격 저장소의 모든 브랜치 보기 가능
+
+# 유명 oss
+1. 편집기 vscode
+2. 편집기 atom
+3. vcs 깃
+4. 구글 인공지능라이브러리
+
+### 10주차 지역 원격 저장소 연동 push와 pull ###
+
+# push
+- 지역저장소에서 원격저장소로 자료를 올리는 명렬어
+
+# pull
+- 원격저장소에서 지역저장소로 자료를 내려받는 명령어
+
+# 원도 push중 오류
+1) 참조 오류발생 가능 -> windows 환경에서 깃 사용자 계정과 암호 설정 및 변경
+2) 인증 오류 발생 가능 -> PAT로 연결
+
+# 지역 저장소에서 PUSH
+1) 쓰기 권한이 있어야  push가 가능
+2) push
+3) 명령
+- $git push <저장소 별칭명> <브랜치명>
+- $git push origin topic
+
+# 명령 push에서 인자 생략하기
+- 옵션 - u 사용
+-> 최초에 한번만 저장소명과 브랜치명을 입력하고 그 후에는 모든 인자를 생략 가능
+$git push origin topic
+성공 이후 간단히 다음으로 가능
+- $git push
+
+# git pull = git fetch + git merge
+  git pull 명령
+- fetch 명령과 병합하는 merge 명령이 순차적으로 진행
+  fetch 명령
+- 원격 저장소의 정보를 로컬 (remote/origin) 저장소로 가져오는 명령
+  merge 명령
+- 변경된 정보를 로컬 저장소의 내용과 병합
+
+# fetch 후 병합
+- 깃허브 내용을 반영하려면 fetch 후 merge 해야함
+- $ git merge origin/main
+
+# 원격 브랜치
+- 원격을 포함한 모든 브랜치 파악
+  지역 브랜치와 HEAD
+- main HEAD
+  원격의 브랜치와 HEAD
+- origin/main origin/HE
